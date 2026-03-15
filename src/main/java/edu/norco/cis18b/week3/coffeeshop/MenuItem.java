@@ -7,7 +7,8 @@ public class MenuItem {
     private String name;
     private BigDecimal price;
 
-    public MenuItem(String sku, String name, BigDecimal price) {
+    public MenuItem(String sku, String name, BigDecimal price) 
+    {
 
         if (sku == null || sku.isBlank()) {
             throw new IllegalArgumentException("sku cannot be null or blank");
@@ -21,12 +22,31 @@ public class MenuItem {
             throw new IllegalArgumentException("price cannot be null");
         }
         
-        if (price.compareTo(BigDecimal.Zero) < 0) {
+        if (price.compareTo(BigDecimal.ZERO) < 0) {
             throw new IllegalArgumentException("price must be >= 0");
+        }    
 
             this.sku = sku;
             this.name = name;
             this.price = price;
+        
+    }
+
+        public String getSku() {
+            return sku;
         }
+
+        public String getName() {
+            return name;
+        }
+
+        public BigDecimal getPrice() {
+            return price;
+        }
+
+        @Override
+        public String toString() {
+            return name + " $" + price;   
     }
 }
+
