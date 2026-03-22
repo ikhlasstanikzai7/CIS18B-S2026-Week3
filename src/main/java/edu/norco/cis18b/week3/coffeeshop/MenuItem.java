@@ -15,7 +15,7 @@ public class MenuItem {
         }
         
         if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("sku cannot be null or blank");
+            throw new IllegalArgumentException("name cannot be null or blank");
         }
         
         if (price == null) {
